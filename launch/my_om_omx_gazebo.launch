@@ -1,0 +1,15 @@
+<launch>
+
+    <include file="$(find my_om_controller)/launch/my_om_gazebo.launch" >
+    </include>
+
+    <node pkg="my_om_controller" type="my_om_service_openmanipulator_pick_and_place_client_2.py"
+        name="openmanipulator_pick_and_place_client" output="screen"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher"
+        name="camera_broadcaster" args="0.046 -0.145 0.0 1.57 0.0 0.0  world camera" />
+
+    <node pkg="my_om_controller" type="coordinate_translator.py"
+        name="SweetPicker_CoordinateTranslator" output="screen"/>
+
+</launch>

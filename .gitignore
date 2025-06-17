@@ -1,0 +1,7 @@
+logs/
+
+#VSCode settings
+.vscode/
+__pycache__/
+
+	

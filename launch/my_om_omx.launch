@@ -1,0 +1,18 @@
+<launch>
+
+    <include file="$(find open_manipulator_controller)/launch/open_manipulator_controller.launch" >
+        <arg name="use_platform" value="true"/>
+        <arg name="usb_port"     value="/dev/ttyACM0"/>
+        <arg name="baud_rate"    value="1000000"/>
+    </include>
+
+    <node pkg="my_om_controller" type="my_om_service_openmanipulator_pick_and_place_client.py"
+        name="openmanipulator_pick_and_place_client" output="screen"/>
+
+    <node pkg="tf2_ros" type="static_transform_publisher"
+        name="camera_broadcaster" args="0.046 -0.145 0.0 1.57 0.0 0.0  world camera" />
+
+    <node pkg="my_om_controller" type="coordinate_translator.py"
+        name="SweetPicker_CoordinateTranslator" output="screen"/>
+
+</launch>

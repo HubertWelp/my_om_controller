@@ -1,0 +1,5 @@
+<launch>
+
+  <include file="$(find open_manipulator_description)/launch/open_manipulator_rviz.launch" />
+  
+</launch>
