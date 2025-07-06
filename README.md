@@ -97,7 +97,7 @@ $ rosrun my_om_controller my_om_service_client_pick_and_place.py
 ```
 $ roslaunch my_om_controller my_om_rviz.launch
 ```
-**5.2.4) Publish pose message: <br/>**
+**5.2.4) Publish pose messages: <br/>**
 ```
 $ rostopic pub -1 /sweet_pose geometry_msgs/Pose  '{position:  {x: 0.21, y: -0.06, z: 0.04}, orientation: {x: 0.10,y: 0.64,z: -0.11,w: 0.76}}'
 $ rostopic pub -1 /sweet_pose geometry_msgs/Pose  '{position:  {x: 0.126, y: 0.042, z: 0.03}, orientation: {x: -0.12,y: 0.65,z: 0.13,w: 0.74}}'
