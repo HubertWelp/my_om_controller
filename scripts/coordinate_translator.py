@@ -38,9 +38,9 @@ class sweetpicker_openmanipulator_mediator_subscriber:
             )
 
     def transform_pose_callback(self, msg: PoseStamped) -> None:
-        msg.pose.position.x = msg.pose.position.x * MM_TO_M
-        msg.pose.position.y = msg.pose.position.y * MM_TO_M
-        msg.pose.position.z = msg.pose.position.z * MM_TO_M
+#        msg.pose.position.x = msg.pose.position.x * MM_TO_M
+#        msg.pose.position.y = msg.pose.position.y * MM_TO_M
+#        msg.pose.position.z = msg.pose.position.z * MM_TO_M
         print(f"{msg.pose.position}")
         transformed_pose = self.transform_pose(msg.pose, "camera", "world")
         transformed_pose.position.z = transformed_pose.position.z + OFFSET_OMX_Z
